@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шиномонтаж — онлайн-запись</title>
+<style>
+:root{--bg:#09080d;--panel:#17141f;--line:#3a304b;--purple:#8b2cff;--pink:#bd62ff;--text:#f7f4fb;--muted:#bdb5ca}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 20%,#28113f 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+header{border-bottom:1px solid #32253f;background:#09080de8;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}.brand{font-weight:900;font-size:21px;letter-spacing:.04em}.brand span{color:var(--pink)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:13px;padding:13px 22px;background:linear-gradient(120deg,#6e13e9,#a443ff);color:white;font-weight:800;cursor:pointer;box-shadow:0 8px 28px #7d22e944}.btn:hover{filter:brightness(1.12)}
+.hero{padding:64px 0 34px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.eyebrow{color:var(--pink);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:12px 0 18px;letter-spacing:-.04em}h1 em{font-style:normal;color:var(--pink)}
+.lead{color:var(--muted);font-size:18px;max-width:530px}.promo{display:inline-block;margin:18px 0 12px;padding:12px 18px;border:1px solid #9d43ff;border-radius:15px;background:#6c19c62b;font-weight:900;font-size:clamp(24px,4vw,40px)}.promo small{display:block;font-size:13px;letter-spacing:.08em;color:#d8b5ff}
+.hero-art{min-height:310px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,#23192f,#0c0b11 60%);display:grid;place-items:center;position:relative;overflow:hidden}
+.hero-art:before{content:"";position:absolute;width:300px;height:300px;border:26px solid #27232e;border-radius:50%;box-shadow:inset 0 0 0 8px #08080b,0 0 0 8px #4c3c60;transform:rotate(-18deg)}
+.wheel{position:relative;width:210px;height:210px;border:14px solid #111;border-radius:50%;background:repeating-conic-gradient(#8d829a 0 8deg,#302a38 8deg 16deg);box-shadow:0 0 0 8px #494052,0 18px 50px #000}
+.wheel:after{content:"";position:absolute;inset:38px;border-radius:50%;border:12px solid #17131e;background:radial-gradient(circle,#a7a0b3 0 8%,#51475e 9% 28%,#19151f 29% 100%)}
+.art-tag{position:absolute;bottom:20px;left:20px;background:#09080de8;border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-weight:700}
+.booking{margin:12px 0 56px;padding:26px;border:1px solid var(--line);border-radius:22px;background:#13111ae8;box-shadow:0 20px 60px #0005}
+.booking h2{margin:0 0 5px;font-size:26px}.booking p{margin:0 0 20px;color:var(--muted)}
+form{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}input,select{width:100%;background:#0d0b12;border:1px solid #4b405b;color:var(--text);padding:13px;border-radius:11px;font:inherit;min-width:0}input:focus,select:focus{outline:2px solid var(--purple);border-color:transparent}form .btn{align-self:end;min-height:49px}
+.section-title{text-align:center;font-size:30px;margin:45px 0 22px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:linear-gradient(145deg,#1c1725,#111016);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}.symbol{font-size:31px;color:var(--pink)}.card h3{font-size:17px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:0}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:24px 0 55px}.benefit{border-left:2px solid #5c2c88;padding:8px 14px}.benefit strong{display:block}.benefit span{color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+#status{margin-top:14px;color:#d7b4ff;font-weight:700;display:none}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:38px}.hero-art{min-height:260px}.navlinks{display:none}form{grid-template-columns:1fr 1fr}.cards,.benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.wrap{padding:0 15px}.booking{padding:18px}form{grid-template-columns:1fr}.cards,.benefits{grid-template-columns:1fr 1fr}.btn{width:100%}.hero{gap:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">◉ ШИНО<span>МОНТАЖ</span></a>
+  <nav class="navlinks"><a href="#booking">Запись</a><a href="#services">Услуги</a><a href="#benefits">Преимущества</a></nav>
+  <a class="btn" href="#booking">Записаться</a>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Быстро · Качественно · Надёжно</div>
+      <h1>Шиномонтаж<br><em>для вашего авто</em></h1>
+      <p class="lead">Запишитесь онлайн на удобное время. Профессиональный сервис, современное оборудование и забота о вашем автомобиле.</p>
+      <div class="promo"><small>СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</small>−30% ВСЕМ</div>
+      <p class="lead">Скидка 30% для каждого клиента — запишитесь прямо сейчас.</p>
+    </div>
+    <div class="hero-art" aria-label="Иллюстрация автомобильного колеса"><div class="wheel"></div><div class="art-tag">Ваш автомобиль в надёжных руках</div></div>
+  </section>
+
+  <section class="booking" id="booking">
+    <h2>Бронирование времени</h2><p>Выберите дату и время — мы свяжемся для подтверждения записи.</p>
+    <form id="bookingForm">
+      <div><label for="car">Марка и модель автомобиля</label><input id="car" name="car" placeholder="Например, Kia Rio" required></div>
+      <div><label for="date">Дата</label><input id="date" name="date" type="date" required></div>
+      <div><label for="time">Время</label><select id="time" name="time" required><option value="">Выберите время</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option></select></div>
+      <div><label for="phone">Телефон для связи</label><input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+      <button class="btn" type="submit">Забронировать →</button>
+    </form>
+    <div id="status" role="status"></div>
+  </section>
+
+  <section id="services"><h2 class="section-title">Наши услуги</h2>
+    <div class="cards">
+      <article class="card"><div class="symbol">◉</div><h3>Сезонный шиномонтаж</h3><p>Переобувка автомобиля</p></article>
+      <article class="card"><div class="symbol">⚖</div><h3>Балансировка колёс</h3><p>Комфортная и ровная езда</p></article>
+      <article class="card"><div class="symbol">🔧</div><h3>Ремонт шин</h3><p>Ремонт проколов и повреждений</p></article>
+      <article class="card"><div class="symbol">◴</div><h3>Проверка давления</h3><p>Подкачка и контроль давления</p></article>
+    </div>
+  </section>
+  <section id="benefits"><h2 class="section-title">Почему выбирают нас?</h2>
+    <div class="benefits">
+      <div class="benefit"><strong>⚡ Быстро</strong><span>Без лишнего ожидания</span></div>
+      <div class="benefit"><strong>✓ Надёжно</strong><span>Внимание к каждой детали</span></div>
+      <div class="benefit"><strong>⚙ Современно</strong><span>Профессиональное оборудование</span></div>
+      <div class="benefit"><strong>−30% всем</strong><span>Выгодное предложение для каждого</span></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© Шиномонтаж · Онлайн-запись</span><span>Телефон: добавьте номер вашего сервиса</span><span>Адрес: добавьте адрес шиномонтажа</span></div></footer>
+<script>
+const dateInput=document.querySelector('#date');
+const today=new Date();const localToday=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+dateInput.min=localToday;
+document.querySelector('#bookingForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const data=new FormData(this);
+  const status=document.querySelector('#status');
+  status.style.display='block';
+  status.textContent=`Заявка подготовлена: ${data.get('car')}, ${data.get('date')} в ${data.get('time')}. Это демонстрационный сайт — подключите телефон/CRM или сервер, чтобы заявки реально отправлялись.`;
+});
+</script>
+</body>
+</html>
